@@ -1,0 +1,367 @@
+{
+	"@context": "",
+	"version": "0.0.0",
+	"type": "thing",
+	"name": "Weaviate test Zoo instance - Thing",
+	"maintainer": "yourfriends@weaviate.com",
+	"classes": [{
+		"class": "Thing",
+		"description": "This is a Thing",
+		"properties": [{
+			"name": "name",
+			"@dataType": ["string"],
+			"description": "Name of the thing."
+			},
+			{
+			"name": "abbreviation",
+			"@dataType": ["string"],
+			"description": "Abbreviation of the thing."
+			},
+			{
+			"name": "description",
+			"@dataType": ["string"],
+			"description": "Short description of the thing."
+			},
+			{
+			"name": "depiction",
+			"@dataType": ["Image"],
+			"description": "Depiction of the thing."
+			}]
+		},
+		{
+			"class": "Employee",
+			"description": "Employee of the zoo",
+			"properties": [{
+				"name": "name",
+				"@dataType": ["string"],
+				"description": "Name of the thing."
+				},
+				{
+				"name": "depiction",
+				"@dataType": ["Image"],
+				"description": "Depiction of the thing."
+				},
+				{
+				"name": "firstName",
+				"@dataType": ["string"],
+				"description": "First name of the person."
+				},
+				{
+				"name": "lastName",
+				"@dataType": ["string"],
+				"description": "Last name of the person."
+				},
+				{
+				"name": "birthDate",
+				"@dataType": ["date"],
+				"description": "Date of birth of the person."
+				},
+				{
+				"name": "birthPlace",
+				"@dataType": ["City"],
+				"description": "Place of birth of the person."
+				},
+				{
+				"name": "clothSize",
+				"@dataType": ["string"],
+				"description": "Cloth size of the person."
+				},
+				{
+				"name": "birthDate",
+				"@dataType": ["date"],
+				"description": "Date of birth of the person."
+				},
+				{
+				"name": "idNumber",
+				"@dataType": ["string"],
+				"description": "Number of the official identity card of the employee."
+				},
+				{
+				"name": "function",
+				"@dataType": ["string"],
+				"description": "Function in the zoo of the employee. E.g. caretaker/cassier/guide/salesmanager/cleaner/hospitality"
+				},
+				{
+				"name": "manager",
+				"@dataType": ["Employee"],
+				"description": "Direct manager of the employee."
+				},
+				{
+				"name": "employeeNumber",
+				"@dataType": ["number"],
+				"description": "Unique employee number."
+				},
+				{
+				"name": "gender",
+				"@dataType": ["string"],
+				"description": "Gender of the employee. Should be male/female/other."
+				},
+				{
+				"name": "hireDate",
+				"@dataType": ["date"],
+				"description": "Hire date of the employee."
+				},
+				{
+				"name": "salary",
+				"@dataType": ["number"],
+				"description": "Monthly salary of the employee."
+				},
+				{
+				"name": "hrsPerWeek",
+				"@dataType": ["number"],
+				"description": "Number of hours per week on the contract of the employee."
+				},
+				{
+				"name": "email",
+				"@dataType": ["string"],
+				"description": "E-mail address of the employee."
+				},
+				{
+				"name": "telephoneNumber",
+				"@dataType": ["string"],
+				"description": "Telephone number of the employee."
+				},
+				{
+				"name": "city",
+				"@dataType": ["City"],
+				"description": "Home city of the employee."
+				}]
+		},
+		{
+			"class": "Visitor",
+			"description": "Visitor of the zoo",
+			"properties": [{
+				"name": "name",
+				"@dataType": ["string"],
+				"description": "Name."
+				},
+				{
+				"name": "description",
+				"@dataType": ["string"],
+				"description": "Short description of the thing."
+				},
+				{
+				"name": "depiction",
+				"@dataType": ["Image"],
+				"description": "Depiction of the thing."
+				},
+				{
+				"name": "ticketNumber",
+				"@dataType": ["Ticket"],
+				"description": "Unique ticket number of the visitor."
+				}]
+		},
+		{
+			"class": "City",
+			"description": "City",
+			"properties": [{
+				"name": "name",
+				"@dataType": ["string"],
+				"description": "Name."
+				},
+				{
+				"name": "country",
+				"@dataType": ["string"],
+				"description": "Country the city lies in."
+				}]
+		},
+		{
+			"class": "Ticket",
+			"description": "Entrance ti]icket to visit the animal park",
+			"properties": [{
+				"name": "ticketNumber",
+				"@dataType": ["integer"],
+				"description": "Unique number of the ticket"
+				},
+				{
+				"name": "date",
+				"@dataType": ["date"],
+				"description": "Date the ticket is sold and valid to use in the zoo."
+				},
+				{
+				"name": "soldBy",
+				"@dataType": ["Employee"],
+				"description": "Employee that sold the ticket."
+				}]
+		},
+		{
+			"class": "Image",
+			"description": "Image",
+			"properties": [{
+				"name": "imageName",
+				"@dataType": ["string"],
+				"description": "Unique name of the image"
+				},
+				{
+				"name": "url",
+				"@dataType": ["string"],
+				"description": "URL of the image."
+				}]
+		},
+		{
+			"class": "Shop",
+			"description": "Shop or eatery in the animal park.",
+			"properties": [{
+				"name": "name",
+				"@dataType": ["string"],
+				"description": "Name of the eatery"
+				},
+				{
+				"name": "manager",
+				"@dataType": ["Employee"],
+				"description": "Manager or owner of the eatery"
+				}]
+		},
+		{
+			"class": "Product",
+			"description": "Product that can be bought by visitors in the animal park.",
+			"properties": [{
+				"name": "name",
+				"@dataType": ["string"],
+				"description": "Name of the product"
+				},
+				{
+				"name": "price",
+				"@dataType": ["number"],
+				"description": "Selling price of the product."
+				},
+				{
+				"name": "inStock",
+				"@dataType": ["boolean"],
+				"description": "True if in stock, false if sold."
+				},
+				{
+				"name": "shop",
+				"@dataType": ["Shop"],
+				"description": "Shop where the product offered."
+				}]
+		},
+		{
+			"class": "Species",
+			"description": "Animal species",
+			"properties": [{
+				"name": "name",
+				"@dataType": ["string"],
+				"description": "Name of the species"
+				},
+				{
+				"name": "latinName",
+				"@dataType": ["string"],
+				"description": "Latin name of the species."
+				},
+				{
+				"name": "feathers",
+				"@dataType": ["boolean"],
+				"description": ""
+				},
+				{
+				"name": "eggs",
+				"@dataType": ["boolean"],
+				"description": ""
+				},
+				{
+				"name": "milk",
+				"@dataType": ["boolean"],
+				"description": ""
+				},
+				{
+				"name": "airborn",
+				"@dataType": ["boolean"],
+				"description": ""
+				},
+				{
+				"name": "aquatic",
+				"@dataType": ["boolean"],
+				"description": ""
+				},
+				{
+				"name": "predator",
+				"@dataType": ["boolean"],
+				"description": ""
+				},
+				{
+				"name": "toothed",
+				"@dataType": ["boolean"],
+				"description": ""
+				},
+				{
+				"name": "backbone",
+				"@dataType": ["boolean"],
+				"description": ""
+				},
+				{
+				"name": "breathes",
+				"@dataType": ["boolean"],
+				"description": ""
+				},
+				{
+				"name": "venomous",
+				"@dataType": ["boolean"],
+				"description": ""
+				},
+				{
+				"name": "fins",
+				"@dataType": ["boolean"],
+				"description": ""
+				},
+				{
+				"name": "legs",
+				"@dataType": ["integer"],
+				"description": ""
+				},
+				{
+				"name": "tail",
+				"@dataType": ["boolean"],
+				"description": ""
+				},
+				{
+				"name": "domestic",
+				"@dataType": ["boolean"],
+				"description": ""
+				},
+				{
+				"name": "catsize",
+				"@dataType": ["boolean"],
+				"description": ""
+				}]
+		},
+		{
+			"class": "Animal",
+			"description": "Unique animal in the zoo",
+			"properties": [{
+				"name": "name",
+				"@dataType": ["string"],
+				"description": "Unique name of the animal."
+				},
+				{
+				"name": "species",
+				"@dataType": ["Species"],
+				"description": "Reference to the animal species"
+				},
+				{
+				"name": "sex",
+				"@dataType": ["string"],
+				"description": "Sex of the animal, should be male/female/unknown."
+				},
+				{
+				"name": "location",
+				"@dataType": ["Enclosure"],
+				"description": "Reference to the animal's enclosure"
+				}]
+		},
+		{
+			"class": "Enclosure",
+			"description": "Animal enclosure",
+			"properties": [{
+				"name": "name",
+				"@dataType": ["string"],
+				"description": "Name of the enclosure"
+				},
+				{
+				"name": "outdoors",
+				"@dataType": ["boolean"],
+				"description": "True if outdoor stay."
+				}]
+		}
+]
+}

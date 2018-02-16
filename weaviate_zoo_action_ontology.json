@@ -1,0 +1,85 @@
+{
+	"@context": "",
+	"version": "0.0.0",
+	"type": "action",
+	"name": "Weaviate test Zoo instance - Action",
+	"maintainer": "yourfriends@weaviate.com",
+	"classes": [{
+		"class": "Purchase",
+		"description": "Purchase action",
+		"properties": [{
+			"name": "purchaseID",
+			"@dataType": ["integer"],
+			"description": "id of the purchase."
+			},
+			{
+			"name": "time",
+			"@dataType": ["date"],
+			"description": "TIme of the purchase."
+			},
+			{
+			"name": "seller",
+			"@dataType": ["Shop"],
+			"description": "Shop of the purchase."
+			},
+			{
+			"name": "paymentMethod",
+			"@dataType": ["string"],
+			"description": "Payment method. Can be pin or cash."
+			},
+			{
+			"name": "buyer",
+			"@dataType": ["Visitor"],
+			"description": "Buyer of the product, should be a visitor"
+			},
+			{
+			"name": "item",
+			"@dataType": ["Product", "Ticket"],
+			"description": "Item that is purchased"
+			}]
+		},
+		{
+		"class": "feedAction",
+		"description": "Action of feeding an animal",
+		"properties": [{
+			"name": "location",
+			"@dataType": ["Enclosure"],
+			"description": "location where the animal is being fed."
+			},
+			{
+			"name": "food",
+			"@dataType": ["string"],
+			"description": "The type of food what is given to the animal."
+			},
+			{
+			"name": "amount",
+			"@dataType": ["number"],
+			"description": "The amount of food what is given to the animal, in kg."
+			},
+			{
+			"name": "time",
+			"@dataType": ["date"],
+			"description": "ISO timestamp of the moment of feeding"
+			}]
+		},
+		{
+		"class": "animalImport",
+		"description": "Import of an animal",
+		"properties": [{
+			"name": "status",
+			"@dataType": ["string"],
+			"description": "Status of the import"
+			},
+			{
+			"name": "price",
+			"@dataType": ["number"],
+			"description": "Price of the animal"
+			},
+			{
+			"name": "date",
+			"@dataType": ["date"],
+			"description": "Date of the import"
+			}]
+		}
+]
+}
