@@ -2,33 +2,53 @@
 	"@context": "",
 	"version": "0.0.0",
 	"type": "action",
-	"name": "Weaviate test Zoo instance - Action",
+	"name": "Weaviate demo Zoo instance Actions",
 	"maintainer": "yourfriends@weaviate.com",
 	"classes": [{
+		"class": "EmployeeShift",
+		"description": "Work shift for employees",
+		"properties": [{
+			"name": "employee",
+			"@dataType": ["Employee"],
+			"description": "Employee that works the shift"
+			}, {
+			"name": "startTime",
+			"@dataType": ["date"],
+			"description": "start of the shift"
+			}, {
+			"name": "endTime",
+			"@dataType": ["date"],
+			"description": "end of the shift"
+			}, {
+			"name": "location",
+			"@dataType": ["Shop", "Cage", "Animal", "Geolocation", "Counter"],
+			"description": "location where the employee works"
+			}]
+	}, {
 		"class": "Purchase",
 		"description": "Purchase action",
 		"properties": [{
 			"name": "purchaseID",
-			"@dataType": ["integer"],
+			"@dataType": ["int"],
 			"description": "id of the purchase."
 			},
 			{
 			"name": "time",
 			"@dataType": ["date"],
-			"description": "TIme of the purchase."
+			"description": "Time of the purchase."
 			},
 			{
-			"name": "seller",
-			"@dataType": ["Shop"],
+			"name": "soldAt",
+			"@dataType": ["Shop", "Counter"],
 			"description": "Shop of the purchase."
 			},
 			{
 			"name": "paymentMethod",
-			"@dataType": ["string"],
+			"@dataType": ["PaymentMethod"],
 			"description": "Payment method. Can be pin or cash."
 			},
 			{
-			"name": "buyer",
+			"name": "customer",
 			"@dataType": ["Visitor"],
 			"description": "Buyer of the product, should be a visitor"
 			},
@@ -36,50 +56,117 @@
 			"name": "item",
 			"@dataType": ["Product", "Ticket"],
 			"description": "Item that is purchased"
-			}]
-		},
-		{
-		"class": "feedAction",
-		"description": "Action of feeding an animal",
-		"properties": [{
-			"name": "location",
-			"@dataType": ["Enclosure"],
-			"description": "location where the animal is being fed."
 			},
 			{
-			"name": "food",
-			"@dataType": ["string"],
-			"description": "The type of food what is given to the animal."
-			},
-			{
-			"name": "amount",
+			"name": "revenue",
 			"@dataType": ["number"],
-			"description": "The amount of food what is given to the animal, in kg."
+			"description": "revenue in euros incl./excl. vat"
 			},
 			{
-			"name": "time",
-			"@dataType": ["date"],
-			"description": "ISO timestamp of the moment of feeding"
-			}]
-		},
-		{
-		"class": "animalImport",
-		"description": "Import of an animal",
-		"properties": [{
-			"name": "status",
-			"@dataType": ["string"],
-			"description": "Status of the import"
+			"name": "helpedBy",
+			"@dataType": ["Employee"],
+			"description": "employee that helped the visitor to complete the purchase"
+			},
+			{
+			"name": "discountVoucher",
+			"@dataType": ["Voucher"],
+			"description": "Voucher used for purchase"
 			},
 			{
 			"name": "price",
 			"@dataType": ["number"],
-			"description": "Price of the animal"
+			"description": "total amount paid by the customer"
+			}]
+	}, {
+		"class": "Entertainment",
+		"description": "show or other entertainment in the zoo",
+		"properties": [{
+			"name": "location",
+			"@dataType": ["Geolocation", "Cage", "Animal"],
+			"description": "location of the show."
 			},
 			{
-			"name": "date",
+			"name": "time",
 			"@dataType": ["date"],
-			"description": "Date of the import"
+			"description": "time and date of the show"
+			},
+			{
+			"name": "entertainer",
+			"@dataType": ["Employee"],
+			"description": "employee who gives the show."
+			},
+			{
+			"name": "type",
+			"@dataType": ["EntertainmentType"],
+			"description": "type of entertainment, e.g. feed, tour, etc."
 			}]
-		}
+	}, {
+		"class": "Feed",
+		"description": "action of feeding animals",
+		"properties": [{
+			"name": "feeder",
+			"@dataType": ["Employee"],
+			"description": "who feeds the animal."
+			},
+			{
+			"name": "animal",
+			"@dataType": ["Animal"],
+			"description": "animal who is given food"
+			},
+			{
+			"name": "food",
+			"@dataType": ["AnimalFood"],
+			"description": "Food the animal gets."
+			},
+			{
+			"name": "time",
+			"@dataType": ["date"],
+			"description": "time of feeding action"
+			},
+			{
+			"name": "show",
+			"@dataType": ["Entertainment"],
+			"description": "linked to entertainment if feeding is part of a show"
+			}]
+	}, {
+		"class": "GivesBirth",
+		"description": "animal giving birth",
+		"properties": [{
+			"name": "animal",
+			"@dataType": ["Animal"],
+			"description": "animal which gives birth"
+			},
+			{
+			"name": "location",
+			"@dataType": ["Geolocation", "Cage"],
+			"description": "location of birth"
+			}]
+	}, {
+		"class": "shopVisit",
+		"description": "an visitor visiting a shop",
+		"properties": [{
+			"name": "visitor",
+			"@dataType": ["Visitor"],
+			"description": "visitor"
+			},
+			{
+			"name": "shop",
+			"@dataType": ["Shop"],
+			"description": "which shop is visited"
+			}]
+	}, {
+		"class": "sellsProducts",
+		"description": "product that is sold by a shop",
+		"properties": [{
+			"name": "product",
+			"@dataType": ["Product"],
+			"description": "product"
+			},
+			{
+			"name": "shop",
+			"@dataType": ["Shop"],
+			"description": "shop where the product is sold"
+			}]
+	}
 ]
 }
