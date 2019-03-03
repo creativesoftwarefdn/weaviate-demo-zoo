@@ -25,7 +25,7 @@
 			"keywords": []
 		}, {
 			"name": "location",
-			"@dataType": ["Shop", "Cage", "Animal", "Geolocation", "Counter"],
+			"@dataType": ["Shop", "Cage", "Animal", "Counter"],
 			"description": "location where the employee works",
 			"keywords": []
 		}]
@@ -100,7 +100,7 @@
 		"keywords": [],
 		"properties": [{
 				"name": "location",
-				"@dataType": ["Geolocation", "Cage", "Animal"],
+				"@dataType": ["Cage", "Animal"],
 				"description": "location of the show.",
 				"keywords": []
 			},
@@ -170,7 +170,7 @@
 			},
 			{
 				"name": "location",
-				"@dataType": ["Geolocation", "Cage"],
+				"@dataType": ["Cage"],
 				"description": "location of birth",
 				"keywords": []
 			}

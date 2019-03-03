@@ -338,7 +338,7 @@
 				"keywords": []
 			}, {
 				"name": "Location",
-				"@dataType": ["Geolocation"],
+				"@dataType": ["geoCoordinates"],
 				"description": "geolocation of the cage in the zoo",
 				"keywords": []
 			}, {
@@ -363,7 +363,7 @@
 				"keywords": []
 			}, {
 				"name": "Location",
-				"@dataType": ["Geolocation"],
+				"@dataType": ["geoCoordinates"],
 				"description": "geolocation of the trash can",
 				"keywords": []
 			}, {
@@ -428,7 +428,7 @@
 				"keywords": []
 			}, {
 				"name": "location",
-				"@dataType": ["Geolocation"],
+				"@dataType": ["geoCoordinates"],
 				"description": "location where the car is parked",
 				"keywords": []
 			}],
@@ -448,7 +448,7 @@
 				"keywords": []
 			}, {
 				"name": "location",
-				"@dataType": ["Geolocation"],
+				"@dataType": ["geoCoordinates"],
 				"description": "location of the object in the zoo",
 				"keywords": []
 			}, {
@@ -473,7 +473,7 @@
 				"keywords": []
 			}, {
 				"name": "location",
-				"@dataType": ["Geolocation"],
+				"@dataType": ["geoCoordinates"],
 				"description": "location of the object in the zoo",
 				"keywords": []
 			}],
@@ -503,7 +503,7 @@
 				"keywords": []
 			}, {
 				"name": "location",
-				"@dataType": ["Geolocation"],
+				"@dataType": ["geoCoordinates"],
 				"description": "location of the facility in the zoo",
 				"keywords": []
 			}, {
@@ -543,7 +543,7 @@
 				"keywords": []
 			}, {
 				"name": "location",
-				"@dataType": ["Geolocation"],
+				"@dataType": ["geoCoordinates"],
 				"description": "location of the facility in the zoo",
 				"keywords": []
 			}, {
@@ -598,7 +598,7 @@
 				"keywords": []
 			}, {
 				"name": "location",
-				"@dataType": ["Geolocation"],
+				"@dataType": ["geoCoordinates"],
 				"description": "location of the shop within the zoo",
 				"keywords": []
 			}],
@@ -781,7 +781,7 @@
 				"keywords": []
 			}, {
 				"name": "location",
-				"@dataType": ["Geolocation"],
+				"@dataType": ["geoCoordinates"],
 				"description": "location of the playground",
 				"keywords": []
 			}],
@@ -806,28 +806,13 @@
 				"keywords": []
 			}, {
 				"name": "location",
-				"@dataType": ["Geolocation"],
+				"@dataType": ["geoCoordinates"],
 				"description": "location of the counter",
 				"keywords": []
 			}, {
 				"name": "employee",
 				"@dataType": ["Employee"],
 				"description": "Employee responsible for the ticket selling at that counter",
-				"keywords": []
-			}],
-			"keywords": []
-		}, {
-			"class": "Geolocation",
-			"description": "location in the zoo",
-			"properties": [{
-				"name": "longitude",
-				"@dataType": ["int"],
-				"description": "x location in the zoo",
-				"keywords": []
-			}, {
-				"name": "latitude",
-				"@dataType": ["int"],
-				"description": "y location in the zoo",
 				"keywords": []
 			}],
 			"keywords": []
